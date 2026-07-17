@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Memory Card</title>
+    </head>
+    <body>
+        <video src="clips/wisteriaBackground.mp4" autoplay muted loop playsinline id="bg-video"></video>
+
+        <audio src="clips/mouse click.mp3" id="mouseClick" preload="auto"></audio>
+
+        <audio src="clips/wrong sound.mp3" id="wrongSound" preload="auto"></audio>
+        <audio src="clips/sweep in.mp3" id="sweepIn" preload="auto" autoplay></audio>
+        <audio src="clips/die.mp3" id="die" preload="auto"></audio>
+
+
+        <div class="intro">
+            <p>Welcome to the Final Selection. <br>
+                Match the Hashira to prove your worth. <br>
+                Are you ready?<br>
+                <button id="button">Yes</button>
+            </p>
+        </div>
+
+        <img src="images/intro.png" alt="" id="introCharacs">
+
+        <div class="page">
+            <div id="timer">Time: 60 sec</div>
+
+            <div class="cardSection">
+                <!-- <img src="crowImg.png" alt="" id="crow"> -->
+                 <video src="clips/crowVideo.webm" muted preload="auto" id="crow"></video>
+                 <div id="crowSpeech">STUPID!</div>
+
+            </div>
+        </div>
+
+        <div id="winPopup">
+            <h1>Congratulations, <br> You passed the final selection!</h1>
+            <p>The Hashira acknowledge your strength.</p>
+
+        </div>
+
+        <div id="losePopup">
+            <h1>Demons proved to be too strong.</h1>
+        </div>
+
+        <div id="overlay"></div>
+       
+        <script src="script.js"></script>
+    </body>
+    </html>
