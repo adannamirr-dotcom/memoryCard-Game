@@ -13,6 +13,7 @@ const mouseClick = document.getElementById("mouseClick");
 const wrongSound = document.getElementById("wrongSound");
 const slideSound = document.getElementById("sweepIn");
 const die = document.getElementById("die");
+const correctMatch = document.getElementById("correctMatch");
 
 let cardLoad = true;
 let totalCards = 0;
@@ -98,7 +99,6 @@ function startTimer(){
     console.log("deck shuffled: " + deck);
 
 setTimeout(() => {
-    slideSound.play();
     introCharacs.classList.add("show");
 }, 300);
 
@@ -113,6 +113,8 @@ button.addEventListener("click", ()=>{
     introCharacs.classList.remove("show");
 
 setTimeout(() => {
+    slideSound.currentTime = 0;
+    slideSound.play();
     cardSection.classList.add("showCard");
     timer.style.opacity = "1";
 }, 1000);
@@ -162,6 +164,11 @@ deck.forEach((item, index)=> {
 
             if(cardA.id === cardB.id){
                 console.log("Match found");
+                correctMatch.currentTime = 0;
+                
+                setTimeout(() => {
+                    correctMatch.play();
+                }, 500);
 
                 matches++;
 
@@ -172,7 +179,7 @@ deck.forEach((item, index)=> {
 
                     setTimeout(() => {
                         timer.textContent = 0;
-                    clearInterval(interval);
+                       clearInterval(interval);
 
                     overlay.classList.add("show");
                     winPopup.classList.add("show");
